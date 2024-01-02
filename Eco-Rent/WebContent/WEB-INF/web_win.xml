@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>Eco-Rent</display-name>
+  <jsp-config>
+        <taglib>
+               <taglib-uri>myfunc</taglib-uri>
+               <taglib-location>/WEB-INF/htmlUtility.tld</taglib-location>
+        </taglib>
+  </jsp-config>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+    <context-param>
+      <param-name>ecoRentOS</param-name>
+      <param-value>windows</param-value>
+    </context-param>
+    <context-param>
+      <param-name>ecoRentPath_Linux</param-name>
+      <param-value>/home/ecorent/pictures/</param-value>
+    </context-param>
+    <context-param>
+      <param-name>ecoRentPath_Win</param-name>
+      <!--  <param-value>C:\\Programmi\\Apache Group\\Tomcat 4.1\\webapps\\ImmoWeb\\pictures\\</param-value>-->
+      <param-value>C:\\Users\\martca\\Documents\\Charly\\ecoRent\\WebContent\\pictures</param-value>
+    </context-param>
+    <context-param>
+      <param-name>ecoRentPath_url</param-name>
+      <param-value>/ecorent/pictures/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>emailHost</param-name>
+        <param-value>mail.eco-rent.ch</param-value>
+    </context-param>
+    <context-param>
+        <param-name>emailUser</param-name>
+        <param-value>info@eco-rent.ch</param-value>
+    </context-param>
+    <context-param>
+        <param-name>emailPassword</param-name>
+        <param-value>Possessione.3</param-value>
+    </context-param>
+    <context-param>
+      <param-name>locale</param-name>
+      <param-value>it</param-value>
+    </context-param>
+    <resource-ref>
+        <description>connessione jdbc</description>
+        <res-ref-name>jdbc/ecorent</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Application</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <resource-ref>
+        <description>Resource reference to a factory for javax.mail
+        </description>
+        <res-ref-name>mail/Session</res-ref-name>
+        <res-type>javax.mail.Session</res-type>
+        <res-auth>Container</res-auth>
+        <res-sharing-scope>Shareable</res-sharing-scope>
+    </resource-ref>
+    <listener>
+      <listener-class>ch.ecoRent.controller.ServletListenerTimer</listener-class>
+    </listener>
+</web-app>

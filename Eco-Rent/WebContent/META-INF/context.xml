@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLocking="true" path="/ecorent">
+  <Resource auth="Container"
+            driverClassName="org.postgresql.Driver"
+            maxActive="40" maxIdle="10" maxWait="1000"
+            name="jdbc/ecorent"
+            type="javax.sql.DataSource"
+            url="jdbc:postgresql://localhost:5432/ecorent_1" username="ecorent_charly" password="Bumbum.72"/>
+  <Resource auth="Container"
+            mail.smtp.auth="true" mail.smtp.debug="true"
+            mail.host="mail.eco-rent.ch"
+            mail.password="Possessione.3" mail.smtp.port="587"
+            mail.user="info@eco-rent.ch" name="mail/Session" type="javax.mail.Session"/>
+</Context>
